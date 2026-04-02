@@ -19,6 +19,7 @@ public class Answer {
 
     private Integer score;
 
+    @Column(length = 5000)
     private String feedback;
 
     public Answer() {

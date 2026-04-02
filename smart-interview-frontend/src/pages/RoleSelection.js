@@ -21,6 +21,7 @@ function RoleSelection() {
     try {
       const userId = localStorage.getItem("userId");
       await API.post("/role/select", { userId, targetRole: role });
+      localStorage.setItem("targetRole", role);
       navigate("/dashboard");
     } catch (err) {
       console.error(err);

@@ -18,6 +18,7 @@ function Login() {
       const res = await API.post("/auth/login", login);
       localStorage.setItem("userId", res.data.userId);
       localStorage.setItem("userName", res.data.name); // Store name for the profile icon
+      localStorage.setItem("targetRole", res.data.targetRole || "");
       navigate("/dashboard");
     } catch (err) {
       setError("Invalid email or password");
